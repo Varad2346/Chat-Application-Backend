@@ -34,7 +34,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Database connection
 connectDB();
-
+app.get("/",(req,res)=>{
+  res.json("hello from varad");
+})
 // Routes
 app.use("/api/auth", authRouter);
 app.use("/api/rooms", roomRoutes);

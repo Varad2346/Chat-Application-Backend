@@ -11,7 +11,7 @@ import messageRoutes from "./routes/message.routes.js";
 import setupSocket from "./config/socket.js"; // New socket setup file
 const app = express();
 const corsOptions = {
-  origin: 'https://chat-application-frontend-livid.vercel.app', // Allow only your frontend URL
+  origin: '*', // Allow only your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
   credentials: true, // Allow cookies to be sent
 };
@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Database connection
 connectDB();
-app.get("/",(req,res)=>{
+app.get("/api/get",(req,res)=>{
   res.json("hello from varad");
 })
 // Routes

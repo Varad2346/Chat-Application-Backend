@@ -3,12 +3,12 @@ import express, { urlencoded } from "express";
 import cors from "cors";
 import http from 'http';
 import { Server } from 'socket.io'; // Add this import
-import connectDB from "./config/db.js";
+import connectDB from "../config/db.js";
 import dotenv from 'dotenv';
-import authRouter from "./routes/auth.routes.js";
-import roomRoutes from "./routes/room.routes.js";
-import messageRoutes from "./routes/message.routes.js";
-import setupSocket from "./config/socket.js"; // New socket setup file
+import authRouter from "../routes/auth.routes.js";
+import roomRoutes from "../routes/room.routes.js";
+import messageRoutes from "../routes/message.routes.js";
+import setupSocket from "../config/socket.js"; // New socket setup file
 const app = express();
 const corsOptions = {
   origin: '*', // Allow only your frontend URL

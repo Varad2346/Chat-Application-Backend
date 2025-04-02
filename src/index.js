@@ -1,10 +1,10 @@
+import dotenv from 'dotenv';
 dotenv.config();
 import express, { urlencoded } from "express";
 import cors from "cors";
 import http from 'http';
 import { Server } from 'socket.io'; // Add this import
 import connectDB from "../config/db.js";
-import dotenv from 'dotenv';
 import authRouter from "../routes/auth.routes.js";
 import roomRoutes from "../routes/room.routes.js";
 import messageRoutes from "../routes/message.routes.js";

@@ -1,8 +1,11 @@
 import mongoose from "mongoose"
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const connectDB=async()=>{
     try{
-        await mongoose.connect("mongodb+srv://varadlimbkar:xHiB4SCvappd1MPw@cluster0.3cvlquq.mongodb.net/mern-chat",{
+        await mongoose.connect(`${process.env.MONGODB_URI}/mern-chat`,{
           })
         console.log("MongoDB connected")  
     }catch(error){

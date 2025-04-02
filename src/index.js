@@ -19,10 +19,10 @@ app.use(cors({
 const server = http.createServer(app);
 
 // Socket.io setup
-const io = require('socket.io')(server, {
+const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:5173', 'https://chat-application-frontend-livid.vercel.app'],
-    methods: ['GET', 'POST'],
+    origin: ['http://localhost:5173', 'https://chat-application-frontend-livid.vercel.app'] ,
+    methods:["GET","POST"],
   }
 });
 

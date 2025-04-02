@@ -10,20 +10,19 @@ import roomRoutes from "../routes/room.routes.js";
 import messageRoutes from "../routes/message.routes.js";
 import setupSocket from "../config/socket.js"; // New socket setup file
 const app = express();
-const corsOptions = {
-  origin: '*', // Allow only your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-  credentials: true, // Allow cookies to be sent
-};
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://chat-application-frontend-livid.vercel.app'],
+  methods: ['GET', 'POST'],
+}));
 
-app.use(cors(corsOptions)); // Apply CORS middleware globally
+
 const server = http.createServer(app);
 
 // Socket.io setup
-const io = new Server(server, {
+const io = require('socket.io')(server, {
   cors: {
-    origin: "https://chat-application-frontend-livid.vercel.app/" ,
-    methods:["GET","POST"],
+    origin: ['http://localhost:5173', 'https://chat-application-frontend-livid.vercel.app'],
+    methods: ['GET', 'POST'],
   }
 });
 

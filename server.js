@@ -24,7 +24,6 @@ const io = new Server(server, {
   cors: {
     origin: "https://chat-application-frontend-livid.vercel.app/" ,
     methods:["GET","POST"],
-
   }
 });
 
